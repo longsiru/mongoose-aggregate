@@ -1,4 +1,4 @@
-var ArticleModel = require("./model/article.js");
+//var ArticleModel = require("./model/article.js");
 
 //查询文章信息
 // ArticleModel.find({}, function (err, docs) {
@@ -24,7 +24,8 @@ var ArticleModel = require("./model/article.js");
 //   }
 // );
 
-//三个表关联查询
+//用aggregate三个表关联查询。
+/*
 ArticleModel.aggregate(
   [
     {
@@ -48,3 +49,23 @@ ArticleModel.aggregate(
     console.log(JSON.stringify(docs));
   }
 );
+*/
+
+//用populate（）关联文章表和分类表。注意：需要引入用到的model,,不建议用
+var ArticleModel = require("./model/article.js");
+var ArticleCateModel = require("./model/articlecate.js");
+var UserModel = require("./model/user.js");
+
+// ArticleModel.find({})
+//   .populate("cid")
+//   .exec(function (err, docs) {
+//     console.log(docs);
+//   });
+
+//用populate（）关联三个表。
+ArticleModel.find({})
+  .populate("cid")
+  .populate("author_id")
+  .exec(function (err, docs) {
+    console.log(docs);
+  });
