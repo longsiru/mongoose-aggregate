@@ -30,13 +30,13 @@ var ArticleModel = require("./model/article.js");
 // });
 // user.save();
 
-// var article = new ArticleModel();
-// article.title = "这是一个国内新闻11111111";
+//3.add article
+var article = new ArticleModel();
+article.title = "这是一个国内新闻";
+article.cid = "643cda226f67076a6026193d"; /*国内新闻，国际新闻*/
+article.author_id = "643cdc392429dcf0c1a85909";
+article.author_name = "siru";
+article.descripton = "这是一个国内新闻11111111 此处省略300字";
+article.content = "这是一个国内新闻11111111";
 
-// article.cid = "5b7900bbf3965813d41216c1"; /*国内新闻*/
-// article.author_id = "5b7901332d552617b09af422";
-// article.author_name = "张三";
-// article.descripton = "这是一个国内新闻11111111 此处省略300字";
-// article.content = "习近平访问美国 这是一个国内新闻11111111";
-
-// article.save();
+article.save();
